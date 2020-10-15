@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RecordSoundViewController.swift
 //  SingingScope Storyboard
 //
 //  Created by 黃廷宇 on 2020/10/7.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class RecordSoundViewController: UIViewController {
 
     @IBOutlet weak var recordingLabel: UILabel!
     @IBOutlet weak var recordButton: UIButton!
@@ -30,6 +30,9 @@ class ViewController: UIViewController {
         // depose of any resources that can be recreated
     }
     
+    @IBAction func recordButton(_ sender: UIButton) {
+    }
+    
     @IBAction func recordAudio(_ sender: AnyObject){
             recordingLabel.text = "Recording in Progress"
             stopRecordingButton.isEnabled = true
@@ -37,7 +40,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func stopRecording(_ sender: AnyObject) {
-        print("The stop recoeding button is pressed")
         recordButton.isEnabled = true
         stopRecordingButton.isEnabled = false
         recordingLabel.text = "Tap to record"

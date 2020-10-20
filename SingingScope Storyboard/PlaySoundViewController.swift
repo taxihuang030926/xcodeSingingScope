@@ -25,7 +25,7 @@ class PlaySoundViewController: UIViewController {
     }
     
     @IBAction func stopButtonPressed(_ sender: AnyObject){
-        print("stop audio button pressed")
+        print("stop audio button pressed ive just cancelled my online commitment, im dumb")
     }
     
     override func viewDidLoad() {

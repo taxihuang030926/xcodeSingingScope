@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class PlaySoundViewController: UIViewController {
 
@@ -19,30 +20,44 @@ class PlaySoundViewController: UIViewController {
     @IBOutlet weak var stopButton: UIButton!
     
     var recordedAudioURL: URL!
+    var audioFile: AVAudioFile!
+    var audioEngine: AVAudioEngine!
+    var audioPlayerNode: AVAudioPlayerNode!
+    var stopTimer: Timer!
+    
+    enum ButtonType: Int { case slow, fast, highPitch, lowPitch, echo, reverb }
     
     @IBAction func playSoundForButton(_ sender: UIButton){
-        print("play sound button pressed")
+        switch(ButtonType(rawValue: sender.tag)!){
+        case .slow:
+            playSound(rate: 0.5)
+        case .fast:
+            playSound(rate: 1.5)
+        case .highPitch:
+            playSound(pitch: 1000)
+        case .lowPitch:
+            playSound(pitch: -1000)
+        case .echo:
+            playSound(echo: true)
+        case .reverb:
+            playSound(reverb: true)
+        }
     }
     
     @IBAction func stopButtonPressed(_ sender: AnyObject){
-        print("stop audio button pressed ive just cancelled my online commitment, im dumb")
+        stopAudio()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupAudio()
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureUI(.notPlaying)
     }
-    */
-
+    
 }

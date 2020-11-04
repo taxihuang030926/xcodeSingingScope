@@ -7,12 +7,18 @@
 //
 
 import UIKit
+// library of User Interface
 import AVFoundation
+// library of Audio and Video
+import PythonKit
 
 class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
     
+    let rosa = Python.import("librosa")
+    //declare the recorder
     var audioRecorder:AVAudioRecorder!
 
+    //declare the buttons and labels
     @IBOutlet weak var recordingLabel: UILabel!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var stopRecordingButton: UIButton!

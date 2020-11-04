@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		7AF8E987252D9AB50069A1C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AF8E985252D9AB50069A1C9 /* LaunchScreen.storyboard */; };
 		7AF8E992252D9AB60069A1C9 /* SingingScope_StoryboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF8E991252D9AB60069A1C9 /* SingingScope_StoryboardTests.swift */; };
 		7AF8E99D252D9AB60069A1C9 /* SingingScope_StoryboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF8E99C252D9AB60069A1C9 /* SingingScope_StoryboardUITests.swift */; };
+		7AFF6BDB25493BDA0055A16E /* PythonKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7AFF6BDA25493BDA0055A16E /* PythonKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AFF6BDB25493BDA0055A16E /* PythonKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +152,9 @@
 			dependencies = (
 			);
 			name = "SingingScope Storyboard";
+			packageProductDependencies = (
+				7AFF6BDA25493BDA0055A16E /* PythonKit */,
+			);
 			productName = "SingingScope Storyboard";
 			productReference = 7AF8E977252D9AB30069A1C9 /* SingingScope Storyboard.app */;
 			productType = "com.apple.product-type.application";
@@ -222,6 +227,9 @@
 				Base,
 			);
 			mainGroup = 7AF8E96E252D9AB30069A1C9;
+			packageReferences = (
+				7AFF6BD925493BDA0055A16E /* XCRemoteSwiftPackageReference "PythonKit" */,
+			);
 			productRefGroup = 7AF8E978252D9AB30069A1C9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -598,6 +606,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7AFF6BD925493BDA0055A16E /* XCRemoteSwiftPackageReference "PythonKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pvieito/PythonKit";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7AFF6BDA25493BDA0055A16E /* PythonKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7AFF6BD925493BDA0055A16E /* XCRemoteSwiftPackageReference "PythonKit" */;
+			productName = PythonKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7AF8E96F252D9AB30069A1C9 /* Project object */;
 }
